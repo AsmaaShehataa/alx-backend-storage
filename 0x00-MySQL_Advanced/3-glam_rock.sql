@@ -1,4 +1,6 @@
 -- SQL script that lists all bands with Glam rock
-SELECT band_name, (2022 - split(band_lifespan, '-')[0]) AS lifespan
+SELECT band_name,
+(IFNULL(split, 2022) - formed) AS lifespan
 FROM metal_bands
-WHERE style = 'Glam rock';
+WHERE style LIKE '%Glam rock%';
+ORDER BY lifespan DESC;
