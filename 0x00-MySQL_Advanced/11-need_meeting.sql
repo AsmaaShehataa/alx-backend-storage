@@ -5,4 +5,4 @@ CREATE VIEW need_meeting AS
     SELECT name
     FROM students
     WHERE average_score < 80
-        AND (last_meeting IS NULL OR last_meeting < ADDDATE(CURRENT_DATE(), INTERVAL -1 MONTH));
+        AND (last_meeting IS NULL OR last_meeting < DATE(CURDATE() - INTERVAL 1 MONTH));
