@@ -1,7 +1,7 @@
 -- SQL script that creates a stored procedure ComputeAverageScoreForUser that computes and store the average score
 
 drop procedure IF EXISTS ComputeAverageScoreForUser
-DELIMITER $$
+DELIMITER $$;
 CREATE PROCEDURE ComputeAverageScoreForUser(IN user_id INT)
 BEGIN
   UPDATE users
